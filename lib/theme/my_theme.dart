@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/theme/app_color.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:news_app/theme/app_color.dart';
 
 class MyThemeData {
   static final ThemeData light = ThemeData(
@@ -21,7 +21,10 @@ class MyThemeData {
         bodyMedium: GoogleFonts.poppins(fontSize:22,fontWeight:FontWeight.w700,color:AppColor.grayColor),
         bodySmall:  GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w500,color:AppColor.secondaryGrayColor),
         headlineMedium:  GoogleFonts.exo(fontSize:14,fontWeight:FontWeight.w400,color:AppColor.blackColor),
-        headlineSmall: GoogleFonts.poppins(fontSize:13,fontWeight:FontWeight.w300,color:AppColor.secondaryGrayColor),
+        headlineSmall: GoogleFonts.poppins(
+            fontSize: 12,
+            fontWeight: FontWeight.w300,
+            color: AppColor.lightGrayColor),
       )
   );
 

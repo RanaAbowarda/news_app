@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/news/news_widget.dart';
 import 'package:news_app/tab_list/tab_item.dart';
 
 import '../api/SourceResponse.dart';
@@ -16,6 +17,12 @@ class _TabWidgetState extends State<TabWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.sourceList.isEmpty) {
+      return Center(child: Text('No sources available'));
+    }
+    if (selectedIndex >= widget.sourceList.length || selectedIndex < 0) {
+      selectedIndex = 0;
+    }
     return DefaultTabController(
         length: widget.sourceList.length,
         child: Column(
@@ -35,6 +42,7 @@ class _TabWidgetState extends State<TabWidget> {
                         isSelected: selectedIndex == widget.sourceList.indexOf(source),
                         source: source))
                     .toList()),
+            NewsWidget(source: widget.sourceList[selectedIndex])
           ],
         ));
   }
